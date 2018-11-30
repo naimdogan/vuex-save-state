@@ -1,0 +1,38 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Proje 1</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  </head>
+  <body>
+    <div id="app">
+        <div class="container">
+            <div class="row">
+                <div class="col-8">
+                    <a href="index.html">İNDEX 1</a>
+                    <a href="index2.html">İNDEX 2</a>
+                   <div class="row" v-for="item in products" :key="item.id">
+                        <div class="col-4">
+                            <img height="100" :src="item.imageUrl" class="rounded float-left" alt="...">
+                        </div>
+                        <div class="col-8">
+                                <h5 class="card-title">{{item.productName}}</h5>
+                                <p class="card-text">Adet: {{item.quantity}}, Beden: {{item.variants[0].size}}, Renk: {{item.variants[0].color}}</p>
+                                <strong>{{item.salePrice}}</strong>
+                                <hr />
+                        </div>
+                    </div>
+                </div> 
+                <div class="col-4"></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vuex/3.0.1/vuex.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+    <script src="store/store.js"></script>
+    <script src="app2.js"></script>
+  </body>
+</html>
